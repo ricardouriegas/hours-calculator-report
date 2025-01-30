@@ -1,0 +1,98 @@
+\documentclass[conference]{IEEEtran}
+
+% para correr / compilar 
+% pdflatex main.tex
+% bibtex main
+% pdflatex main.tex
+% pdflatex main.tex
+% 
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[utf8]{inputenc} % Caracteres en Español (Acentos, ñs)
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{url} % ACENTOS
+\usepackage{hyperref} % Referencias
+\usepackage{subfig}
+\usepackage{lipsum}
+\usepackage{balance} 
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\frontmatter@RRAP@format}{(}{}{}{}
+\patchcmd{\frontmatter@RRAP@format}{)}{}{}{}
+\makeatother	
+
+\usepackage[backend=bibtex,sorting=none]{biblatex}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\addbibresource{references.bib}
+
+% fecha
+\usepackage{datetime}
+\newdateformat{specialdate}{
+    \twodigit{\THEDAY}-\twodigit{\THEMONTH}-\THEYEAR
+}
+\date{\specialdate\today}
+
+% la sentencia \burl en las citas... 
+\usepackage[hyphenbreaks]{breakurl}
+\renewcommand\spanishtablename{Tabla}
+\renewcommand\spanishfigurename{Figura}
+
+
+\begin{document}
+% Definitions
+\newcommand{\breite}{0.9} %  for twocolumn
+\newcommand{\RelacionFiguradoscolumnas}{0.9}
+\newcommand{\RelacionFiguradoscolumnasPuntoCinco}{0.45}
+
+%Title of paper
+\title{Reporte de Laboratorio X \\ Calculadora de Horas}
+
+% Trabajo Individual
+\author{
+    \IEEEauthorblockN{
+        Ricardo Emmanuel Uriegas Ibarra\IEEEauthorrefmark{1}
+        }
+    % En caso de trabajos en equipo, poner a todos los autores 
+    % en estricto ORDEN ALFABETICO
+    %\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+    %Homer Simpson\IEEEauthorrefmark{1}}
+    \IEEEauthorblockA{
+        \IEEEauthorrefmark{1}Ingeniería en Tecnologías de la Información\\
+        Universidad Politécnica de Victoria
+    }
+}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract} 
+    Dada la necesidad de calcular intervalos de tiempo con una aplicación que use una interfaz Qt6. En este trabajo se presenta el desarrollo de una aplicación denominada "Calculadora de Horas", implementada en el lenguaje de programación Python utilizando la librería PyQt6. La aplicación facilita el cálculo del tiempo transcurrido entre dos fechas y/o horas. Se realizaron pruebas para validar la precisión de los cálculos, obteniendo resultados consistentes con otras herramientas similares disponibles en línea\cite{calculator}.
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+    En la actualidad, el cálculo de intervalos de tiempo es una tarea común en diversas áreas de la vida común; desde la administración de proyectos, la programación de tareas, hasta la planificación de eventos. En este sentido, el desarrollo de una aplicación que permita calcular intervalos de tiempo de manera fácil se vuelve en algo con utilidad. En este trabajo se presenta el desarrollo de una aplicación implementada en el lenguaje de programación Python y haciendo uso de la librería PyQt6. La aplicación permite el cálculo del tiempo transcurrido entre dos fechas y/o horas.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Desarrollo Experimental}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultados}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusión}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{section}{Referencias} 
+\printbibliography
+%\balance
+
+\end{document}
